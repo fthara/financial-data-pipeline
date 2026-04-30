@@ -1,0 +1,9 @@
+[project]
+name = "airflow-spark-pipeline"
+version = "0.1.0"
+dependencies = [
+    "pyspark",
+    "apache-airflow",
+    "requests",
+    "pandas"
+]
