@@ -5,5 +5,7 @@ dependencies = [
     "pyspark",
     "apache-airflow",
     "requests",
-    "pandas"
+    "pandas",
+    "yfinance>=1.3.0",
+    "pyarrow>=24.0.0",
 ]
