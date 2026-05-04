@@ -9,6 +9,7 @@ x-airflow-common: &airflow-common
     - ./dags:/app/dags
     - ./spark:/app/spark
     - airflow-db:/app/airflow
+    - /home/fernando/fernando/projects/data:/app/data
   environment:
     &airflow-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
