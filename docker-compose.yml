@@ -6,16 +6,18 @@ x-airflow-common: &airflow-common
       GID: "${GID:-1000}"
   user: "${UID:-1000}:${GID:-1000}"
   volumes:
-    - ./dags:/app/dags
+    - ./dags:/app/airflow/dags
     - ./spark:/app/spark
     - airflow-db:/app/airflow
     - /home/fernando/fernando/projects/data:/app/data
   environment:
     &airflow-env
     AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__EXECUTION_API_SERVER_URL: http://airflow-webserver:8080/execution/
     AIRFLOW__CORE__LOAD_EXAMPLES: "False"
     AIRFLOW__CORE__AUTH_MANAGER: airflow.api_fastapi.auth.managers.simple.simple_auth_manager.SimpleAuthManager
     AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS: "True"
+    AIRFLOW__CORE__DAGS_FOLDER: /app/airflow/dags
 
 services:
   airflow-init:
