@@ -3,7 +3,7 @@ from pyspark.sql import SparkSession
 from pyspark.sql.functions import avg, col, exp, lag, log, max, rank, sum as _sum, stddev
 from pyspark.sql.window import Window
 
-BASE_PATH = Path("/home/fernando/fernando/projects/data/financial_data_pipeline")
+BASE_PATH = Path("/app/data/financial_data_pipeline")
 COMBINED_PATH = BASE_PATH / "silver/combined"
 
 spark = (

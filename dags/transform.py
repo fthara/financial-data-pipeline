@@ -1,9 +1,9 @@
 from pathlib import Path
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import avg, coalesce, col, exp, lag, lit, log, max, rank, sum as _sum, stddev
+from pyspark.sql.functions import coalesce, col, lag, lit
 from pyspark.sql.window import Window
 
-BASE_PATH = Path("/home/fernando/fernando/projects/data/financial_data_pipeline")
+BASE_PATH = Path("/app/data/financial_data_pipeline")
 PRICE_PATH = BASE_PATH / "bronze/prices"
 DIV_PATH = BASE_PATH / "bronze/dividends"
 SPLIT_PATH = BASE_PATH / "bronze/splits"
